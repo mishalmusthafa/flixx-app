@@ -71,6 +71,7 @@ ul {
   color: #fff;
 }
 
+
 .container {
   max-width: 1200px;
   width: 100%;
@@ -238,8 +239,7 @@ section h2 {
   margin-top: 20px;
 }
 
-.details-bottom {
-}
+.details-bottom {}
 
 .details-bottom li {
   margin: 15px 0;
