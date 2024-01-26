@@ -341,3 +341,25 @@ section h2 {
 .alert-error {
   background: red;
 }
+
+/* media query */
+@media (max-width:890px) {
+  .details-top img {
+    width: 340px;
+  }
+}
+
+
+@media (max-width:768px) {
+  .details-top {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .details-top img {
+    width: 65%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
