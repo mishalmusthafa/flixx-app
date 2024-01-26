@@ -28,7 +28,7 @@ async function displayPopularMovies() {
 }
 
 // Display 20 popular TV shows
-async function displyaPopularTvShows() {
+async function displayPopularTvShows() {
   const { results } = await fetchAPIData('tv/popular');
 
   // creating the Tv shows element
