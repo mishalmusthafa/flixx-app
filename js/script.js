@@ -30,8 +30,9 @@ async function displayPopularMovies() {
 // Display 20 popular TV shows
 async function displayPopularTvShows() {
   const { results } = await fetchAPIData('tv/popular');
-
+  console.log('popular tv shows fetched');
   // creating the Tv shows element
+
   results.forEach((show) => {
     const div = document.createElement('div');
     div.classList.add('card');
@@ -53,6 +54,9 @@ async function displayPopularTvShows() {
           </div>
         </div>`;
     document.getElementById('popular-shows').appendChild(div);
+
+    console.log(`popular shows cerated`);
+
   });
 }
 
