@@ -28,7 +28,7 @@ async function displayPopularMovies() {
 }
 
 // Display 20 popular TV shows
-async function displyaPopularTvShows() {
+async function displayPopularTvShows() {
   const { results } = await fetchAPIData('tv/popular');
 
   // creating the Tv shows element
@@ -115,7 +115,7 @@ async function fetchAPIData(endpoint) {
   const API_URL = 'https://api.themoviedb.org/3/';
   showSpinner();
 
-  const response = await fetch(`${API_URL}${endpoint}?api_key=${API_KEY}&language=en-US`);
+  const response = await fetch(`${API_URL}${endpoint}?api_key=${API_KEY}`);
   const data = await response.json();
   hideSpinner();
 
@@ -148,7 +148,7 @@ function init() {
       displayPopularMovies();
       break;
     case '/shows.html':
-      displyaPopularTvShows();
+      displayPopularTvShows();
       break;
     case '/movie-details.html':
       displayMovieDetails();
