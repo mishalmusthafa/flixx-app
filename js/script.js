@@ -1,6 +1,7 @@
 const global = {
   currentPage: window.location.pathname
 };
+console.log(global.currentPage);
 
 // Display 20 popular movies
 async function displayPopularMovies() {
@@ -152,9 +153,11 @@ function init() {
       displayPopularMovies();
       break;
     case '/shows.html':
+    case '/shows':
       displayPopularTvShows();
       break;
     case '/movie-details.html':
+    case '/movie-details':
       displayMovieDetails();
       break;
     case '/tv-details.html':
