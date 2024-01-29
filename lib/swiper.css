@@ -775,3 +775,7 @@ button.swiper-pagination-bullet {
   backface-visibility: hidden;
   overflow: hidden;
 }
+
+.swiper .swiper-wrapper {
+  transition-timing-function: linear;
+}

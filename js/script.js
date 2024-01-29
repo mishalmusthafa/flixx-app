@@ -329,18 +329,21 @@ async function displaySlider(medium) {
 // Initialising the swiper Function
 function initSwiper() {
   const swiper = new Swiper('.swiper', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
     autoplay: {
-      delay: 3000,
+      delay: 0,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: false,
+
     },
-    freeMode: {
-      enabled: true,
-      minimumVelocity: 0.2
-    },
+    spaceBetween: 30,
+    speed: 4000,
+    slidesPerView: 1,
+
+
+
     breakpoints: {
       500: {
+
         slidesPerView: 2,
       },
       700: {
@@ -348,6 +351,7 @@ function initSwiper() {
       },
       1200: {
         slidesPerView: 4,
+
       },
     }
   });

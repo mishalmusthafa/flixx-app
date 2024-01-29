@@ -183,6 +183,10 @@ section.now-playing {
   background: url(../images/showcase-bg.jpg) no-repeat center center/cover;
 }
 
+.swiper .swiper-wrapper {
+  transition-timing-function: linear;
+}
+
 section h2 {
   margin: 20px 0;
   text-align: center;
