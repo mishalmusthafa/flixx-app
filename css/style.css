@@ -375,17 +375,12 @@ section h2 {
     margin-right: auto;
   }
 
-  .search-radio {
-    display: flex;
-    flex-direction: column;
+  .search {
+    padding: 60px 10px;
   }
 
-  .search-radio div {
-    margin-bottom: 10px;
-  }
-
-  .search .container {
-    padding: 0;
+  .now-playing {
+    display: none;
   }
 
 }
