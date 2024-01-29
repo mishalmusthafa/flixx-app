@@ -62,7 +62,7 @@ ul {
 }
 
 .btn:disabled {
-  border-color: #ccc;
+  border-color: #333;
   cursor: not-allowed;
 }
 
@@ -301,6 +301,8 @@ section h2 {
   outline: none;
 }
 
+
+
 .search .container form button {
   flex: 1;
   display: block;
@@ -334,12 +336,13 @@ section h2 {
   border-radius: 5px;
 }
 
-.alert-success {
-  background: green;
+.success {
+  background: rgba(0, 128, 0, 0.466);
 }
 
-.alert-error {
-  background: red;
+.error {
+  background: rgba(255, 0, 0, 0.466);
+
 }
 
 /* media query */
