@@ -274,6 +274,11 @@ section h2 {
   max-width: 600px;
 }
 
+.search-radio {
+  display: flex;
+  flex-direction: row;
+}
+
 .search-radio label {
   margin-right: 15px;
 }
@@ -369,4 +374,18 @@ section h2 {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .search-radio {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-radio div {
+    margin-bottom: 10px;
+  }
+
+  .search .container {
+    padding: 0;
+  }
+
 }
