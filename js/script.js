@@ -1,10 +1,12 @@
+let pageOnLocalStorage = localStorage.getItem('page');
+
 // Global Objects
 const global = {
   currentPage: window.location.pathname,
   search: {
     type: '',
     term: '',
-    page: 1,
+    page: `${pageOnLocalStorage}`,
     totalPage: 1,
     totalResult: 0,
   },
@@ -13,7 +15,6 @@ const global = {
     url: 'https://api.themoviedb.org/3/',
   },
 };
-
 
 
 // Display 20 popular movies Function
@@ -134,11 +135,7 @@ async function search() {
 
   if (global.search.term !== '' && global.search.term !== null) {
     const { results, page, total_pages, total_results } = await searchAPIData();
-    // const results = await searchAPIData();
-    console.log(results);
 
-
-    global.search.page = page;
     global.search.totalPage = total_pages;
     global.search.totalResult = total_results;
 
@@ -152,11 +149,12 @@ async function search() {
   } else {
     showAlert('Please Enter a search Term', 'error');
   }
+
+
 }
 
 // Display Search Result function
 function displaySearchResult(results) {
-
 
   document.querySelector('#search-results-heading').innerHTML = '';
   document.querySelector('#search-results').innerHTML = '';
@@ -186,6 +184,7 @@ function displaySearchResult(results) {
     <h2>${results.length} out of ${global.search.totalResult} results for ${global.search.term} </h2>
     `;
   });
+  console.log(global.search.page);
 
   displayPagination();
 }
@@ -214,13 +213,16 @@ function displayPagination() {
   // Next Page
   document.querySelector('#next').addEventListener('click', async () => {
     global.search.page++;
+    localStorage.setItem('page', global.search.page);
     const { results, total_pages } = await searchAPIData();
     displaySearchResult(results);
+
   });
 
   // Prev Page
   document.querySelector('#prev').addEventListener('click', async () => {
     global.search.page--;
+    localStorage.setItem('page', global.search.page);
     const { results, total_pages } = await searchAPIData();
     displaySearchResult(results);
   });
@@ -411,6 +413,9 @@ function highlightActiveLinks() {
   });
 }
 
+
+
+
 // Init the app
 function init() {
   switch (global.currentPage) {
@@ -440,6 +445,16 @@ function init() {
 
 }
 
+// Local Storage ----------------
+
+// Set current search page to local storage
+
+
 
 // Initialise the app on DOMContentLoader event listner
 document.addEventListener('DOMContentLoaded', init);
+
+// Changing the page no. in local storage back to 1 
+document.querySelector('#search-btn').addEventListener('click', () => { localStorage.setItem('page', 1); });
+
+
