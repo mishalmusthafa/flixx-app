@@ -12,4 +12,4 @@ Once you get your key, just add it to the `api.apiKey` value in the global state
 
 ## Live links
 
- Check out the Flixx-app [live url](https://github-finder-app-eight-kappa.vercel.app/)
+ Check out the Flixx-app [live url](https://msl-flixxmovieapp.netlify.app/)
